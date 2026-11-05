@@ -1,328 +1,522 @@
-# SocialPulse - Social Media Analytics Dashboard
+# SocialPulse – Social Media Analytics Dashboard
 
-> **Academic Conceptual Application:** Demonstrating full-stack social media analytics collection, data modeling, aggregation pipelines, and interactive data visualizations.
+> **Academic Conceptual Application:** A full-stack social media analytics dashboard demonstrating data collection, database management, performance analysis, and interactive data visualization.
 
----
+## 1. Project Overview
 
-## 1. Project Overview & Objectives
+**SocialPulse** is a modern, responsive Social Media Analytics Dashboard designed to provide centralized insights into social media performance across four major platforms:
 
-**SocialPulse** is a modern, responsive Social Media Analytics Dashboard engineered to empower marketing teams, content creators, and brand managers with centralized performance visibility across four major social networks: **Instagram**, **Facebook**, **YouTube**, and **X (Twitter)**.
+- Instagram
+- Facebook
+- YouTube
+- X (Twitter)
 
-### Core Objectives:
-1. **Monitor Multi-Channel Performance**: Track aggregate impressions, reach, followers, and engagement rates in real time.
-2. **Engagement Pattern Analysis**: Unpack interactions (likes, comments, shares) with daily trends and cross-platform distribution.
-3. **Audience Acquisition Tracking**: Analyze compounding audience growth, net daily gains, and weekly trajectory.
-4. **Content-Level Intelligence**: Evaluate post-level performance and identify high-converting content hooks.
-5. **Executive Reporting**: Produce comprehensive audit summaries with 7, 30, and 90-day filters and browser-native print export.
+The application helps users monitor engagement metrics, analyze audience growth, compare platform performance, and generate analytical reports through an intuitive dashboard.
 
-*Note: All data displayed is realistic simulated historical data stored and queried in MongoDB to demonstrate architectural feasibility.*
+### Core Objectives
+
+1. **Multi-Platform Performance Monitoring:** Track followers, reach, impressions, and engagement across multiple social media platforms.
+2. **Engagement Analysis:** Monitor likes, comments, and shares through interactive charts and historical trends.
+3. **Audience Growth Tracking:** Analyze daily and weekly follower acquisition and overall audience growth.
+4. **Content Performance Analysis:** Evaluate individual post performance and identify high-engagement content.
+5. **Analytical Reporting:** Generate performance summaries and platform comparisons with selectable 7, 30, and 90-day reporting periods.
+
+> **Note:** All analytics displayed in this application are based on realistic simulated historical data stored in MongoDB. The application does not currently connect to live social media APIs.
 
 ---
 
 ## 2. Technology Stack
 
-Built strictly adhering to the specified minimal, performant full-stack architecture:
+SocialPulse is developed using the specified React, Node.js, Express.js, and MongoDB technology stack.
 
-- **Frontend**:
-  - React.js (v18)
-  - JavaScript (ES6+)
-  - HTML5 & Responsive Semantic Markup
-  - Vanilla CSS3 (Custom design system with CSS variables, light SaaS palette, responsive flex/grid layouts)
-  - Custom SVG/CSS Data Visualizations (Zero heavy third-party charting bloat)
-  - Lucide React (Clean icon set)
-  - Vite (Fast development tooling & optimized production bundler)
-- **Backend**:
-  - Node.js (v24 runtime)
-  - Express.js (REST API, routing, error-handling middleware)
-  - CORS middleware & dotenv environment configuration
-- **Database**:
-  - MongoDB
-  - Mongoose ODM (Schemas, references, compound indices, validation)
+### Frontend
+- React.js – Component-based user interface.
+- JavaScript (ES6+) – Application logic and interactivity.
+- HTML5 – Semantic application structure.
+- CSS3 – Responsive layouts and custom styling.
+- Vite – Frontend development server and production build tool.
+- Lucide React – Interface icons.
+- SVG and CSS – Custom data visualizations.
+
+### Backend
+- Node.js – Server-side JavaScript runtime.
+- Express.js – REST API development and routing.
+- Mongoose – MongoDB object modelling.
+- CORS – Cross-origin request handling.
+- dotenv – Environment configuration.
+
+### Database
+- MongoDB – NoSQL database.
+- Mongoose schemas – Data modelling, validation, and database operations.
 
 ---
 
 ## 3. Application Modules
 
-### 🟣 Module 1: Overview Dashboard
-- **6 KPI Metric Cards**:
-  - *Total Followers*: Current aggregate across all channels, percentage delta, and trend indicator.
-  - *Total Engagement*: Gross interactions (Likes + Comments + Shares).
-  - *Engagement Rate*: Weighted percentage ratio of engagement to reach.
-  - *Total Reach*: Unique impressions achieved over the period.
-  - *Total Impressions*: Gross content views.
-  - *Total Posts*: Active published content items.
-- **Visualizations**:
-  - Follower Growth (SVG Line Chart with area gradient, grid lines, and interactive hover tooltip).
-  - Engagement Trends (SVG Bar Chart with multi-metric hover breakdown).
-  - Platform Performance Comparison (Multi-metric comparison bars).
-  - Engagement Distribution (Interactive SVG Donut Chart with center value).
-- **Recent Posts Table**:
-  - Post Title, Platform badge, Likes, Comments, Shares, Engagement Rate, and Publication Date.
+### Module 1: Overview Dashboard
 
-### 🟣 Module 2: Platform Analytics
-- Comprehensive platform cards for **Instagram**, **Facebook**, **YouTube**, and **X**.
-- Platform-wise display of: Followers/Subscribers, Total Posts, Likes, Comments, Shares, Reach, Impressions, and Engagement Rate.
-- Comparative multi-channel visual benchmark and reach distribution.
+Provides a centralized view of overall social media performance.
 
-### 🟣 Module 3: Engagement Analytics
-- KPI breakdown of Total Likes, Total Comments, Total Shares, and Average Engagement Rate.
-- Interactive daily engagement trend chart with hover details for each metric.
-- Platform-wise engagement distribution donut chart.
-- Top performing content table ranked by engagement rate and likes.
+**Key Performance Indicators (KPIs):**
+- Total Followers
+- Total Engagement
+- Engagement Rate
+- Total Reach
+- Total Impressions
+- Total Posts
 
-### 🟣 Module 4: Audience Growth
-- Macro growth summary: Total Audience, New Followers Gained, and Overall Growth Percentage.
-- Cumulative audience growth trajectory line chart.
-- Platform-wise audience market share donut chart.
-- Toggleable **Daily** and **Weekly** net follower acquisition trends.
+Each metric displays its current value, percentage change, and performance trend.
 
-### 🟣 Module 5: Reports
-- Executive performance summary report with selectable timeframes (7, 30, 90 days).
-- Section-by-section breakdown:
-  1. Executive Performance Summary
-  2. Engagement Analysis
-  3. Audience Growth Summary
-  4. Platform Performance Breakdown Table
-  5. Visual Platform Benchmark
-- Browser-native **Print Report** button (`window.print()`) styled with clean `@media print` rules for clean paper or PDF export.
+**Data Visualizations:**
+
+- Follower Growth – Interactive SVG line chart.
+- Engagement Trends – SVG bar chart.
+- Platform Performance – Comparative platform chart.
+- Engagement Distribution – SVG donut chart.
+
+**Recent Posts Table:**
+
+Displays post title, platform, likes, comments, shares, engagement rate, and publication date.
+
+### Module 2: Platform Analytics
+
+Provides individual performance insights for:
+
+- Instagram
+- Facebook
+- YouTube
+- X (Twitter)
+
+**Metrics displayed:**
+- Followers or subscribers.
+- Total posts.
+- Likes.
+- Comments.
+- Shares.
+- Reach.
+- Impressions.
+- Engagement rate.
+
+Includes comparative visualizations to evaluate performance across platforms.
+
+### Module 3: Engagement Analytics
+
+Analyzes audience interactions across social media platforms.
+
+**Features:**
+- Total likes.
+- Total comments.
+- Total shares.
+- Average engagement rate.
+- Daily engagement trends.
+- Platform-wise engagement distribution.
+- Top-performing content.
+
+Interactive charts provide a visual breakdown of engagement patterns.
+
+### Module 4: Audience Growth
+
+Provides insights into audience acquisition and growth trends.
+
+**Features:**
+- Total audience.
+- New followers gained.
+- Overall growth percentage.
+- Cumulative audience growth trajectory.
+- Platform-wise audience distribution.
+- Daily and weekly follower acquisition trends.
+
+### Module 5: Analytical Reports
+
+Provides a consolidated view of social media performance.
+
+**Report sections:**
+1. Executive Performance Summary.
+2. Engagement Analysis.
+3. Audience Growth Summary.
+4. Platform Performance Breakdown.
+5. Visual Platform Comparison.
+
+**Additional functionality:**
+- 7-day, 30-day, and 90-day reporting periods.
+- Platform selection.
+- Dynamic analytical summaries.
+- Browser-native print functionality.
+- Print-to-PDF support.
 
 ---
 
 ## 4. Application Architecture
 
+SocialPulse follows a three-tier architecture that separates the frontend, backend, and database.
+
+```text
+              SOCIALPULSE APPLICATION
+                       |
+                       v
+        +-----------------------------+
+        |       React Frontend        |
+        |                             |
+        | Dashboard | Charts | Reports|
+        | Filters   | Analytics       |
+        +-------------+---------------+
+                      |
+                 HTTP / JSON
+                      |
+                      v
+        +-----------------------------+
+        |       Express.js API        |
+        |                             |
+        | Routes | Controllers        |
+        | Middleware | Business Logic |
+        +-------------+---------------+
+                      |
+                   Mongoose
+                      |
+                      v
+        +-----------------------------+
+        |          MongoDB            |
+        |                             |
+        | Platforms                   |
+        | Analytics                   |
+        | Posts                       |
+        +-----------------------------+
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    SocialPulse Client                       │
-│        (React 18 + Pure SVG Charts + Vanilla CSS)           │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ HTTP / JSON API Calls
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    Express REST API                         │
-│           (Controllers, Routes, Middleware)                 │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ Mongoose ODM
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    MongoDB Database                         │
-│       (Platforms, Daily Analytics 90-Days, Posts)           │
-└─────────────────────────────────────────────────────────────┘
-```
+
+### Architecture Workflow
+
+1. The user interacts with the React frontend.
+2. React sends HTTP requests to the Express REST API.
+3. Express processes requests through the appropriate routes and controllers.
+4. Mongoose communicates with MongoDB.
+5. MongoDB returns the requested analytical data.
+6. The backend processes the data and sends JSON responses.
+7. React updates the dashboard metrics and visualizations.
 
 ---
 
-## 5. Folder Structure
+## 5. Project Folder Structure
 
-```
+```text
 SocialPulse/
 │
 ├── client/
 │   ├── public/
-│   ├── src/
-│   │   ├── charts/
-│   │   │   ├── BarChart.jsx            # Pure SVG Bar Chart
-│   │   │   ├── ComparisonChart.jsx     # Multi-platform comparative chart
-│   │   │   ├── DonutChart.jsx          # Pure SVG Donut Chart with center label
-│   │   │   └── LineChart.jsx           # Pure SVG Line Chart with gradient & tooltip
-│   │   ├── components/
-│   │   │   ├── FilterBar.jsx           # 7/30/90 days & platform dropdown filter
-│   │   │   ├── Header.jsx              # Responsive header & DB status
-│   │   │   ├── KpiCard.jsx             # Metric card with delta & trend indicator
-│   │   │   ├── RecentPostsTable.jsx    # Post analytics table
-│   │   │   └── Sidebar.jsx             # Navigation sidebar with mobile drawer
-│   │   ├── pages/
-│   │   │   ├── AudienceGrowth.jsx      # Module 4
-│   │   │   ├── Engagement.jsx          # Module 3
-│   │   │   ├── Overview.jsx            # Module 1
-│   │   │   ├── PlatformAnalytics.jsx   # Module 2
-│   │   │   └── Reports.jsx             # Module 5 (Printable)
-│   │   ├── services/
-│   │   │   └── api.js                  # Frontend API client
-│   │   ├── styles/
-│   │   │   └── index.css               # Design system & responsive styles
-│   │   ├── App.jsx                     # Core application component
-│   │   └── main.jsx                    # React entrypoint
-│   ├── index.html                      # HTML template
-│   ├── package.json                    # Client dependencies
-│   └── vite.config.js                  # Vite configuration & API proxy
+│   └── src/
+│       ├── charts/
+│       │   ├── BarChart.jsx
+│       │   ├── ComparisonChart.jsx
+│       │   ├── DonutChart.jsx
+│       │   └── LineChart.jsx
+│       │
+│       ├── components/
+│       │   ├── FilterBar.jsx
+│       │   ├── Header.jsx
+│       │   ├── KpiCard.jsx
+│       │   ├── RecentPostsTable.jsx
+│       │   └── Sidebar.jsx
+│       │
+│       ├── pages/
+│       │   ├── AudienceGrowth.jsx
+│       │   ├── Engagement.jsx
+│       │   ├── Overview.jsx
+│       │   ├── PlatformAnalytics.jsx
+│       │   └── Reports.jsx
+│       │
+│       ├── services/
+│       │   └── api.js
+│       │
+│       ├── styles/
+│       │   └── index.css
+│       │
+│       ├── App.jsx
+│       └── main.jsx
 │
 ├── server/
 │   ├── config/
-│   │   └── db.js                       # Mongoose database connection
+│   │   └── db.js
+│   │
 │   ├── controllers/
-│   │   ├── analyticsController.js      # Aggregation & metric calculations
-│   │   ├── platformController.js       # Platform entity handlers
-│   │   └── postController.js           # Post queries & filtering
+│   │   ├── analyticsController.js
+│   │   ├── platformController.js
+│   │   └── postController.js
+│   │
 │   ├── middleware/
-│   │   └── errorHandler.js             # 404 & Centralized error handler
+│   │   └── errorHandler.js
+│   │
 │   ├── models/
-│   │   ├── Analytics.js                # Daily analytics schema
-│   │   ├── Platform.js                 # Social platform schema
-│   │   └── Post.js                     # Content post schema
+│   │   ├── Analytics.js
+│   │   ├── Platform.js
+│   │   └── Post.js
+│   │
 │   ├── routes/
-│   │   ├── analyticsRoutes.js          # /api/analytics routes
-│   │   ├── platformRoutes.js           # /api/platforms routes
-│   │   └── postRoutes.js               # /api/posts routes
+│   │   ├── analyticsRoutes.js
+│   │   ├── platformRoutes.js
+│   │   └── postRoutes.js
+│   │
 │   ├── seed/
-│   │   └── seedData.js                 # 90-day multi-channel seeding script
-│   ├── .env.example                    # Backend environment template
-│   ├── package.json                    # Server dependencies
-│   └── server.js                       # Express application bootstrap
+│   │   └── seedData.js
+│   │
+│   ├── testEndpoints.js
+│   └── server.js
 │
-├── .env.example                        # Root environment reference
-├── .gitignore                          # Git ignore specification
-├── package.json                        # Root helper scripts
-└── README.md                           # Documentation
+├── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+│
+└── client/
+    └── package.json
 ```
 
 ---
 
-## 6. Database Collections & Schemas
+## 6. Database Design
 
-### 1. Platforms Collection (`Platform.js`)
-| Field | Type | Description |
+MongoDB is used to store platform information, historical analytics, and post-level performance data.
+
+The application contains three primary collections.
+
+### 6.1 Platforms Collection
+
+**Model:** `Platform.js`
+
+| Field | Data Type | Description |
 |---|---|---|
-| `platformName` | String | Unique enum (`Instagram`, `Facebook`, `YouTube`, `X`) |
-| `username` | String | Platform handle (e.g., `@socialpulse_app`) |
-| `followers` | Number | Current follower or subscriber count |
-| `connectedAt` | Date | Initial channel connection timestamp |
+| platformName | String | Social media platform name |
+| username | String | Platform account handle |
+| followers | Number | Current follower count |
+| connectedAt | Date | Initial connection timestamp |
 
-### 2. Analytics Collection (`Analytics.js`)
-| Field | Type | Description |
+Supported platform names: Instagram, Facebook, YouTube, and X.
+
+### 6.2 Analytics Collection
+
+**Model:** `Analytics.js`
+
+| Field | Data Type | Description |
 |---|---|---|
-| `platformId` | ObjectId | Reference to `Platform` model |
-| `date` | Date | Daily timestamp (indexed) |
-| `followers` | Number | Daily total followers |
-| `likes` | Number | Total daily likes |
-| `comments` | Number | Total daily comments |
-| `shares` | Number | Total daily shares / retweets |
-| `reach` | Number | Total daily unique accounts reached |
-| `impressions` | Number | Total content impressions |
-| `engagementRate` | Number | Daily engagement percentage |
+| platformId | ObjectId | Reference to Platform |
+| date | Date | Analytics record date |
+| followers | Number | Total followers |
+| likes | Number | Daily likes |
+| comments | Number | Daily comments |
+| shares | Number | Daily shares |
+| reach | Number | Unique accounts reached |
+| impressions | Number | Total impressions |
+| engagementRate | Number | Engagement percentage |
 
-*Note: Compound index on `{ platformId: 1, date: 1 }` for high-performance time-series queries.*
+A compound index on `platformId` and `date` supports efficient analytical queries.
 
-### 3. Posts Collection (`Post.js`)
-| Field | Type | Description |
+### 6.3 Posts Collection
+
+**Model:** `Post.js`
+
+| Field | Data Type | Description |
 |---|---|---|
-| `platformId` | ObjectId | Reference to `Platform` model |
-| `postTitle` | String | Content caption or headline |
-| `postDate` | Date | Publication date |
-| `likes` | Number | Post likes |
-| `comments` | Number | Post comments |
-| `shares` | Number | Post shares |
-| `reach` | Number | Post reach |
-| `engagementRate` | Number | Calculated post engagement rate |
+| platformId | ObjectId | Reference to Platform |
+| postTitle | String | Post title or caption |
+| postDate | Date | Publication date |
+| likes | Number | Total likes |
+| comments | Number | Total comments |
+| shares | Number | Total shares |
+| reach | Number | Post reach |
+| engagementRate | Number | Post engagement percentage |
 
 ---
 
-## 7. API Endpoint Documentation
+## 7. REST API Documentation
 
-All endpoints return standardized JSON: `{ success: true, data: { ... } }`.
+The backend exposes RESTful endpoints through Express.js.
 
-| Method | Endpoint | Query Parameters | Description |
-|---|---|---|---|
-| `GET` | `/api/health` | None | Service health check |
-| `GET` | `/api/platforms` | None | List all connected platforms |
-| `GET` | `/api/platforms/:id` | None | Get single platform by ID or Name |
-| `GET` | `/api/posts` | `platform`, `search`, `sort`, `page`, `limit` | Paginated post analytics |
-| `GET` | `/api/analytics` | `days` (7, 30, 90), `platform` | Filtered raw analytics entries |
-| `GET` | `/api/analytics/overview` | `days`, `platform` | Overview KPIs, % changes, and 4 chart datasets |
-| `GET` | `/api/analytics/platforms`| `days` | Platform-wise stats and comparative benchmarks |
-| `GET` | `/api/analytics/engagement`| `days`, `platform` | Likes, comments, shares, trends, and top posts |
-| `GET` | `/api/analytics/audience` | `days`, `platform` | Audience growth, net gains, and trajectory |
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/health` | Check server health |
+| GET | `/api/platforms` | Retrieve all platforms |
+| GET | `/api/platforms/:id` | Retrieve a specific platform |
+| GET | `/api/posts` | Retrieve post analytics |
+| GET | `/api/analytics` | Retrieve historical analytics |
+| GET | `/api/analytics/overview` | Retrieve overview metrics |
+| GET | `/api/analytics/platforms` | Retrieve platform comparisons |
+| GET | `/api/analytics/engagement` | Retrieve engagement statistics |
+| GET | `/api/analytics/audience` | Retrieve audience growth data |
+
+### Supported Query Parameters
+
+- `days`: Select 7, 30, or 90 days.
+- `platform`: Filter by social media platform.
+- `search`: Search posts.
+- `sort`: Specify sorting order.
+- `page`: Select pagination page.
+- `limit`: Set the number of returned records.
+
+The API returns structured JSON responses for frontend consumption.
 
 ---
 
-## 8. Installation & Setup Instructions
+## 8. Installation and Setup
 
-### Prerequisites:
-- **Node.js**: v18.0.0 or later (v24 recommended)
-- **MongoDB**: Local MongoDB instance running on default port `27017` or a MongoDB Atlas URI
+### Prerequisites
+
+- Node.js (v18 or later).
+- npm.
+- MongoDB local installation or MongoDB Atlas account.
+- Git.
 
 ### Step 1: Clone the Repository
+
 ```bash
 git clone https://github.com/Nina789n/SocialPulse.git
+
 cd SocialPulse
 ```
 
-### Step 2: Environment Configuration
-Copy `.env.example` to `server/.env`:
+### Step 2: Configure Environment Variables
+
+Copy the server environment template:
+
 ```bash
 cp server/.env.example server/.env
 ```
-Default configuration for local MongoDB:
+
+Configure the environment variables:
+
 ```env
 PORT=5000
 NODE_ENV=development
 MONGODB_URI=mongodb://127.0.0.1:27017/socialpulse
 CLIENT_URL=http://localhost:5173
 ```
-*For MongoDB Atlas: Replace `MONGODB_URI` with your connection string:*
-`mongodb+srv://<username>:<password>@<cluster>.mongodb.net/socialpulse?retryWrites=true&w=majority`
+
+For MongoDB Atlas, replace the local MongoDB URI with your Atlas connection string.
 
 ### Step 3: Install Dependencies
-Install dependencies across both client and server:
+
+Install backend dependencies:
+
 ```bash
-# Install server dependencies
 cd server
 npm install
+```
 
-# Install client dependencies
+Install frontend dependencies:
+
+```bash
 cd ../client
 npm install
-
-cd ..
 ```
 
 ### Step 4: Seed the Database
-Populate MongoDB with 90 days of realistic multi-channel analytics and post data:
+
+Ensure MongoDB is running, then execute:
+
 ```bash
 cd server
 npm run seed
 ```
-Output:
-```
-[MongoDB Connected]: 127.0.0.1:27017/socialpulse
-Inserted 4 platforms.
-Inserted 360 analytics records (90 days x 4 platforms).
-Inserted 18 sample posts.
-✅ Seeding completed successfully!
-```
 
-### Step 5: Start the Application
-Run the backend and frontend in separate terminal windows:
+The seed script populates the database with simulated historical analytics.
 
-**Terminal 1 (Backend API):**
+Expected sample dataset:
+
+- 4 social media platforms.
+- 360 daily analytics records (90 days × 4 platforms).
+- 18 sample posts.
+
+### Step 5: Run the Backend
+
+Open a terminal:
+
 ```bash
 cd server
 npm start
-# Server runs on http://localhost:5000
 ```
 
-**Terminal 2 (Frontend Client):**
+The backend runs at:
+
+`http://localhost:5000`
+
+### Step 6: Run the Frontend
+
+Open a separate terminal:
+
 ```bash
 cd client
 npm run dev
-# Frontend runs on http://localhost:5173
 ```
 
-Open your browser at **http://localhost:5173** to access SocialPulse!
+The frontend runs at:
+
+`http://localhost:5173`
+
+Open the frontend URL in your browser to access SocialPulse.
 
 ---
 
-## 9. Screenshots Placeholder
+## 9. Testing and Verification
 
-*(Screenshots can be added here after local deployment)*
+The project includes an automated API testing script.
 
-- **Overview Dashboard**: High-level KPIs, Follower Growth Line Chart, Engagement Trends Bar Chart, Platform Comparison Chart, and Recent Posts.
-- **Platform Analytics**: Channel cards for Instagram, Facebook, YouTube, and X with comparative metrics.
-- **Engagement Analytics**: Likes, comments, shares breakdown with interactive trend graphs.
-- **Audience Growth**: Compounding trajectory with toggleable daily/weekly acquisition views.
-- **Analytical Reports**: Executive audit view with one-click print-to-PDF export.
+Run the backend test suite using:
+
+```bash
+cd server
+node testEndpoints.js
+```
+
+The following endpoints were reported as successfully tested:
+
+- Health check.
+- Platform retrieval.
+- Post retrieval.
+- Historical analytics.
+- Overview metrics.
+- Platform analytics.
+- Engagement analytics.
+- Audience growth.
+
+The frontend production build was also reported successful using:
+
+```bash
+cd client
+npm run build
+```
+
+> Testing results should be reverified after any future code changes.
 
 ---
 
-## 10. License
+## 10. Screenshots
 
-Developed for academic conceptual demonstration purposes. Licensed under the MIT License.
+Screenshots of the application can be added here after running the project locally.
+
+Suggested screenshots:
+
+1. Overview Dashboard.
+2. Platform Analytics.
+3. Engagement Analytics.
+4. Audience Growth.
+5. Analytical Reports.
+
+---
+
+## 11. Future Enhancements
+
+Potential extensions for future development include:
+
+- Integration with official social media APIs.
+- Real-time analytics synchronization.
+- User authentication and role-based access.
+- Advanced content performance analysis.
+- Automated scheduled reports.
+- Predictive audience growth analysis.
+
+These features are outside the scope of the current MVP.
+
+---
+
+## 12. License
+
+Developed as an academic conceptual application for demonstrating full-stack web development, database integration, and social media analytics visualization.
+
+Licensed under the MIT License.
