@@ -1,3 +1,4 @@
+
 # SocialPulse – Social Media Analytics Dashboard
 
 > **Academic Conceptual Application:** A full-stack social media analytics dashboard demonstrating data collection, database management, performance analysis, and interactive data visualization.
@@ -520,3 +521,6 @@ These features are outside the scope of the current MVP.
 Developed as an academic conceptual application for demonstrating full-stack web development, database integration, and social media analytics visualization.
 
 Licensed under the MIT License.
+=======
+# SocialPulse
+
