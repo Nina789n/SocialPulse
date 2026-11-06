@@ -494,29 +494,25 @@ Screenshots of the application can be added here after running the project local
 Suggested screenshots:
 
 1. Overview Dashboard.
+   <img width="1388" height="825" alt="Screenshot 2026-11-06 163946" src="https://github.com/user-attachments/assets/49d06498-5082-4a45-b630-61dce38fa5a3" />
+
 2. Platform Analytics.
+   <img width="1390" height="826" alt="Screenshot 2026-11-06 164006" src="https://github.com/user-attachments/assets/89f78a98-b860-4776-a3b3-9dac23d52f9d" />
+
 3. Engagement Analytics.
+   <img width="1382" height="817" alt="Screenshot 2026-11-06 164019" src="https://github.com/user-attachments/assets/de9740cc-81ae-4d09-b863-1e45e4a72ff4" />
+
 4. Audience Growth.
+   <img width="1395" height="834" alt="Screenshot 2026-11-06 164041" src="https://github.com/user-attachments/assets/a7e1aef4-29ea-4524-966a-1b35aa781580" />
+
 5. Analytical Reports.
+    <img width="1389" height="824" alt="Screenshot 2026-11-06 164111" src="https://github.com/user-attachments/assets/319813a0-90e3-4466-b117-353cc65a4f38" />
+
+   
 
 ---
 
-## 11. Future Enhancements
-
-Potential extensions for future development include:
-
-- Integration with official social media APIs.
-- Real-time analytics synchronization.
-- User authentication and role-based access.
-- Advanced content performance analysis.
-- Automated scheduled reports.
-- Predictive audience growth analysis.
-
-These features are outside the scope of the current MVP.
-
----
-
-## 12. License
+## 11. License
 
 Developed as an academic conceptual application for demonstrating full-stack web development, database integration, and social media analytics visualization.
 
