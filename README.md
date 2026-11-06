@@ -489,9 +489,6 @@ npm run build
 
 ## 10. Screenshots
 
-Screenshots of the application can be added here after running the project locally.
-
-Suggested screenshots:
 
 1. Overview Dashboard.
    <img width="1388" height="825" alt="Screenshot 2026-11-06 163946" src="https://github.com/user-attachments/assets/49d06498-5082-4a45-b630-61dce38fa5a3" />
